@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .heading {
+            position: absolute;
+            top: 4git 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            text-align: center;
+            color: #333;
+        }
+        .animation-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .circle {
+            position: absolute;
+            top: -50px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff6384;
+            border-radius: 50%;
+            animation: move-down 5s linear infinite;
+        }
+        .triangle {
+            position: absolute;
+            top: 50%;
+            right: -50px;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 86.6px solid #36a2eb;
+            animation: move-left 4s linear infinite;
+        }
+        .square {
+            position: absolute;
+            top: calc(50% - 25px);
+            left: -50px;
+            width: 50px;
+            height: 50px;
+            background-color: #ffce56;
+            animation: move-right 6s linear infinite;
+        }
+        @keyframes move-down {
+            0% {
+                top: -50px;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+        @keyframes move-left {
+            0% {
+                right: -50px;
+            }
+            100% {
+                right: 100%;
+            }
+        }
+        @keyframes move-right {
+            0% {
+                left: -50px;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Animations</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget neque eu est rhoncus facilisis.</p>
+        </div>
+        <div class="animation-container">
+            <div class="circle"></div>
+            <div class="circle" style="left: 20%;"></div>
+            <div class="circle" style="left: 40%;"></div>
+            <div class="circle" style="left: 60%;"></div>
+            <div class="circle" style="left: 80%;"></div>
+        </div>
+        <div class="animation-container">
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+            <div class="triangle"></div>
+        </div>
+        <div class="animation-container">
+            <div class="square"></div>
+            <div class="square" style="left: 20%;"></div>
+            <div class="square" style="left: 40%;"></div>
+            <div class="square" style="left: 60%;"></div>
+            <div class="square" style="left: 80%;"></div>
+        </div>
+    </div>
+</body>
+</html>

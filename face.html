@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            background-color: aquamarine;
+            width:100%;
+            height:100vh;
+            left:0;
+            top:0;
+            position:absolute;
+           
+            /* display:flex;
+            flex-direction:column;
+            gap:110px; */
+        }
+        .hair{
+            background-color: rgb(58, 45, 45);
+            position:absolute;
+            left:33%;
+            border-top-left-radius: 100px 50px;
+            border-top-right-radius:100px 50px ;
+            border-bottom-left-radius: -100px -50px;
+            border-bottom-right-radius:-100px -50px ;
+            top:10%;
+            z-index:1;
+            height:130px;
+            width:500px;
+        }
+        .face{
+            left:33%;
+            top:20%;
+            background-color: blanchedalmond;
+            border-bottom-left-radius: 200px 80px;
+            border-bottom-right-radius:200px 80px ;
+            border-top-left-radius: 100px 50px;
+            border-top-right-radius:100px 50px ;
+            position:absolute;
+            height:300px;
+            width:500px;
+            z-index:2;
+        }
+        .eyebrows{
+            transform:translateX(75px);
+            margin-top:30px;
+            display:flex;
+            flex-direction:row;
+            gap:200px;
+        }
+        .eyebrow1{
+            border-bottom-left-radius: 100px 80px;
+            border-bottom-right-radius:100px 80px ;
+            border-top-left-radius: 500px 250px;
+            border-top-right-radius:500px 250px ;
+            position:relative;
+            background-color:rgb(58, 45, 45);
+            height:15px;
+            width:70px;
+            z-index:3;
+        }
+        .eyebrow2{
+            border-bottom-left-radius: 100px 80px;
+            border-bottom-right-radius:100px 80px ;
+            border-top-left-radius: 500px 250px;
+            border-top-right-radius:500px 250px ;
+            position:relative;
+            background-color:rgb(58, 45, 45);
+            height:15px;
+            width:70px;
+            z-index:3;
+
+        }
+        .eyes{
+            transform:translateX(87px);
+            margin-top:40px;
+            display:flex;
+            flex-direction:row;
+            gap:235px;
+
+        }
+        .eye1{
+            background-color: black;
+            border-radius: 50px;
+            height:40px;
+            width:40px;
+            z-index:3;
+            position:relative;
+        }
+        .eye2{
+            background-color: black;
+            height:40px;
+            width:40px;
+            border-radius: 50px;
+            z-index:3;
+            position:relative;
+        }
+        .smile{
+            position:relative;
+            margin-top:100px;
+            z-index:3;
+            height:40px;
+            width:300px;
+            border-bottom-left-radius: 1900px 580px;
+            border-bottom-right-radius:1900px 580px ;
+            border-top-left-radius: -1800px -50px;
+            border-top-right-radius:-1800px -50px ;
+            transform:translateX(99px);
+            background-color: rgb(230, 99, 138);
+        }
+        .buttons{
+            display:flex;
+            flex-direction:row;
+            transform: translateY(560px);
+            gap:300px;
+            margin-left:120px;
+        }
+         @keyframes sad{
+            0%{
+                border-bottom-left-radius: 1900px 580px;
+            border-bottom-right-radius:1900px 580px ;
+            border-top-left-radius: -1800px -50px;
+            border-top-right-radius:-1800px -50px ;
+            }
+            100%{
+                border-top-left-radius: 1900px 580px;
+            border-top-right-radius:1900px 580px ;
+            border-bottom-left-radius: -1800px -50px;
+            border-bottom-right-radius:-1800px -50px ;
+            }
+            
+        } 
+        @keyframes happy{
+            0%{
+                left:0px; right:0px;
+                border-bottom-left-radius: 1900px 580px;
+            border-bottom-right-radius:1900px 580px ;
+            /* border-top-left-radius: -1800px -50px;
+            border-top-right-radius:-1800px -50px ; */
+            }
+            100%{
+                 width:330px; height:70px;
+                /* transform:translateX(109px); */ 
+                left:-12px;right:20px;
+                border-bottom-left-radius: 2900px 1280px;
+            border-bottom-right-radius:2900px 1280px ;
+            /* border-bottom-left-radius: 1800px 1050px;
+            border-bottom-right-radius:1800px 1050px ; */
+            }
+            /* 100%{
+                border-bottom-left-radius: 1900px 580px;
+            border-bottom-right-radius:1900px 580px ;
+            border-top-left-radius: -1800px -50px;
+            border-top-right-radius:-1800px -50px ;
+            } */
+        }
+        @keyframes look{
+            0%{
+                left:0; right:0;
+
+            }
+            35%{
+                left:-20px;
+                
+            }
+            70%{
+                left:40px;
+                
+            }
+            100%{
+                left:0; right:0;
+            }
+        }
+        @keyframes looksmile{
+            0%{
+                 left:0;
+                border-bottom-left-radius: 1900px 580px;
+            border-bottom-right-radius:1900px 580px ; 
+            }
+            25%{
+                left:140px;
+                width:40px;
+                height:40px;
+                border-radius: 150px;
+            }
+            80%{
+                border-bottom-left-radius:0px;
+            border-bottom-right-radius:0px ;
+                left:140px;
+                width:40px;
+                height:40px;
+                border-radius: 150px;
+            }
+            
+            100%{
+                left:0;
+                
+                border-bottom-left-radius: 1900px 580px;
+            border-bottom-right-radius:1900px 580px ;
+            /* border-bottom-left-radius:0px;
+            border-bottom-right-radius:0px ; */
+                /* left:140px;
+                width:40px;
+                height:40px;
+                border-radius: 150px;
+             */
+            }
+        }
+        @keyframes wink{
+            0%{
+                top:0;
+                height:40px;
+            width:40px;
+            border-radius: 50px;
+            }
+            5%{
+                top:10px;
+                height:13px;
+            width:40px;
+            border-bottom-left-radius: 100px 80px;
+            border-bottom-right-radius:100px 80px ;
+            border-top-left-radius: 500px 250px;
+            border-top-right-radius:500px 250px ;
+            /* transform:rotate(45deg); */
+            }
+            25%{
+              
+                top:10px;
+                height:13px;
+                /* transform:rotate(25deg); */
+            }
+            50%{
+                top:10px;
+                height:13px;
+                transform:rotate(35deg);
+            }
+            70%{
+                top:10px;
+                height:13px;
+                /* transform:rotate(25deg); */
+            }
+            100%{
+                top:0;
+                height:40px;
+            width:40px;
+            border-radius: 50px;
+            }
+        }
+        @keyframes brows{
+            0%{
+                top:0;
+                transform:rotate(0deg);
+            }
+            70%{
+                top:-5px;
+                transform:rotate(20deg);
+            }
+            95%{
+                top:-5px;
+                transform:rotate(20deg);
+            }
+            100%{
+                top:0;
+                transform:rotate(0deg);
+            }
+        }
+        @keyframes brows1{
+            0%{
+                top:0;
+                transform:rotate(0deg);
+            }
+            70%{
+                top:-5px;
+                transform:rotate(-20deg);
+            }
+            95%{
+                top:-5px;
+                transform:rotate(-20deg);
+            }
+            100%{
+                top:0;
+                transform:rotate(0deg);
+            }
+        }
+        @keyframes browwink{
+            0%{
+                top:0;
+                transform:rotate(0deg);
+            }
+            /* 70%{
+               
+                transform:rotate(-7deg);
+            } */
+            55%{
+                top:5px;
+                transform:rotate(-7deg);
+            }
+            100%{
+                top:0;
+                transform:rotate(0deg);
+            }
+        }
+        @keyframes happybrows{
+            0%{
+                top:0;
+            }
+            35%{
+                top:-10px;
+            }
+            40%{
+                top:0;
+            }
+            59%{
+                top:-10px;
+            }
+            67%{
+                top:0;
+            }
+            100%{
+                top:0;
+            }
+        }
+        @keyframes hi{
+            0%{
+                left:0; right:0;
+
+            }
+            35%{
+                left:-20px;
+                
+            }
+            80%{
+                left:-20px;
+            }
+            100%{
+                left:0; right:0;
+            }
+        }
+        @keyframes hismile{
+            0%{
+                 left:0;
+                border-bottom-left-radius: 1900px 580px;
+            border-bottom-right-radius:1900px 580px ; 
+            }
+            35%{
+                left:140px;
+                width:40px;
+                height:40px;
+                border-radius: 150px;
+            }
+            80%{
+                border-bottom-left-radius:0px;
+            border-bottom-right-radius:0px ;
+                left:140px;
+                width:40px;
+                height:40px;
+                border-radius: 150px;
+            }
+            
+            100%{
+                left:0;
+                
+                border-bottom-left-radius: 1900px 580px;
+            border-bottom-right-radius:1900px 580px ;
+            /* border-bottom-left-radius:0px;
+            border-bottom-right-radius:0px ; */
+                /* left:140px;
+                width:40px;
+                height:40px;
+                border-radius: 150px;
+             */
+            }
+        }
+        @keyframes hello1{
+            0%{
+                top:0; left:0; right:0;
+                transform:rotate(0deg);
+            }
+            25%{
+                top:0;left:0; right:0;
+                transform:rotate(5deg);
+                color:rgb(187, 184, 180);
+            }
+            50%{
+                top:0;left:0; right:0;
+                transform:rotate(0deg);
+                color:rgb(187, 184, 180);
+            }
+            75%{
+                top:0; left:0; right:0;
+                transform:rotate(-5deg);
+                color:rgb(187, 184, 180);
+            }
+            100%{
+                top:0;left:0; right:0;
+                transform:rotate(0deg);
+            }
+        }
+        .text{
+            display:none;
+
+        }
+        .text1{
+            animation:hello1 4s linear infinite;
+            margin-left:300px;
+            margin-top:140px;
+        }
+    </style>
+    
+    <div class="container">
+        <h1 style="transform:translateY(500px); margin-left:30px; color:rgb(123, 112, 112);">Facial Expressions</h1>
+        <div class="hair"></div>
+        <div class="face">
+            <div class="eyebrows">
+                <div class="eyebrow1" id="eyebrow1"></div>
+                <div class="eyebrow2" id="eyebrow2"></div>
+            </div>
+            <div class="eyes">
+                <div id="look1" class="eye1"></div>
+                <div id="look2"class="eye2"></div>
+            </div>
+            <div class="smile" id="smile">
+
+            </div>
+            
+        </div>
+        <div class="buttons">
+            <button id="but1" onClick={Func1()}>Sad</button>
+            <button id="but2" onClick={Func2()}>Happy</button>
+            <button id="but3" onClick={Func3()}>Wink</button>
+            <button id="but4" onClick={Func4()}>Look</button>
+           
+        </div>
+        <button id="but5" onClick={Func5()}>Hi</button>
+        <h1 class="text"id="hello" >Hello!</h1>
+    </div>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function(){
+            var sad=document.getElementById("but1");
+            sad.addEventListener('click', Func1);
+            var happy=document.getElementById("but2");
+            happy.addEventListener('click', Func2);
+            var look=document.getElementById("but4");
+            look.addEventListener('click', Func4);
+            var wink=document.getElementById("but3");
+            wink.addEventListener('click', Func3);
+            var hi=document.getElementById("but5");
+            hi.addEventListener('click', Func5);
+
+        });
+        const Func1=()=>{
+            var brow=document.getElementById("eyebrow2");
+            brow.style.animation = 'none';
+             brow.offsetHeight; 
+            brow.style.animation = 'brows 2s linear';
+            var brow2=document.getElementById("eyebrow1");
+            brow2.style.animation = 'none';
+             brow2.offsetHeight; 
+            brow2.style.animation = 'brows1 2s linear';
+                var sad=document.getElementById("smile");
+                sad.style.animation = 'none';
+  
+  
+  sad.offsetHeight; 
+  sad.style.animation = 'sad 2s linear';
+           
+        };
+        const Func2=()=>{
+var happybrow1=document.getElementById("eyebrow1");
+var happybrow2=document.getElementById("eyebrow2");
+happybrow1.style.animation = 'none';
+happybrow1.offsetHeight; 
+happybrow1.style.animation = 'happybrows 3s linear';
+happybrow2.style.animation = 'none';
+happybrow2.offsetHeight; 
+happybrow2.style.animation = 'happybrows 3s linear';
+           
+var happy=document.getElementById("smile");
+smile.style.animation = 'none';
+
+// Force reflow by accessing an element property (e.g., offsetHeight)
+smile.offsetHeight; // This triggers a reflow
+
+// Apply the animation again
+smile.style.animation = 'happy 2s linear';
+
+};
+const Func4=()=>{
+
+    var look=document.getElementById("smile");
+                look.style.animation = 'none';
+  
+  // Force reflow by accessing an element property (e.g., offsetHeight)
+  look.offsetHeight; // This triggers a reflow
+  
+  //Apply the animation again
+  look.style.animation = 'looksmile 2s linear';
+var look1=document.getElementById("look1");
+look1.style.animation = 'none';
+
+// Force reflow by accessing an element property (e.g., offsetHeight)
+look1.offsetHeight; // This triggers a reflow
+
+// Apply the animation again
+look1.style.animation = 'look 2s linear';
+var look2=document.getElementById("look2");
+look2.style.animation = 'none';
+
+// Force reflow by accessing an element property (e.g., offsetHeight)
+look2.offsetHeight; // This triggers a reflow
+
+// Apply the animation again
+look2.style.animation = 'look 2s linear';
+
+};
+const Func3=()=>{
+
+    var brow=document.getElementById("eyebrow2");
+            brow.style.animation = 'none';
+             brow.offsetHeight; 
+            brow.style.animation = 'browwink 1s linear';
+var wink=document.getElementById("look2");
+wink.style.animation = 'none';
+
+// Force reflow by accessing an element property (e.g., offsetHeight)
+wink.offsetHeight; // This triggers a reflow
+
+// Apply the animation again
+wink.style.animation = 'wink 1s linear';
+
+};
+const Func5=()=>{
+
+var hi=document.getElementById("look1");
+        hi.style.animation = 'none';
+         hi.offsetHeight; 
+        hi.style.animation = 'hi 4s linear';
+        var hi2=document.getElementById("look2");
+        hi2.style.animation = 'none';
+         hi2.offsetHeight; 
+        hi2.style.animation = 'hi 4s linear';
+        var h=document.getElementById("hello");
+        h.classList.remove('text');
+        h.classList.add('text1');
+var smiley=document.getElementById("smile");
+smiley.style.animation = 'none';
+
+// Force reflow by accessing an element property (e.g., offsetHeight)
+smiley.offsetHeight; // This triggers a reflow
+
+// Apply the animation again
+smiley.style.animation = 'hismile 4s linear';
+
+};
+    </script>
+</body>
+
+</html>
